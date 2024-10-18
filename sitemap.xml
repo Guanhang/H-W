@@ -7,51 +7,107 @@
 >
 
 <url>
- <loc>http://hangnwen.com/index.html</loc>
+ <loc>https://hangnwen.com/index.html</loc>
  <priority>0.3</priority>
- <lastmod>2024-10-12</lastmod>
+ <lastmod>2024-10-18</lastmod>
  <changefreq>weekly</changefreq>
 </url>
 
 <url>
- <loc>http://hangnwen.com/destination_details.html</loc>
+ <loc>https://hangnwen.com/toys.html</loc>
  <priority>0.3</priority>
- <lastmod>2024-10-12</lastmod>
+ <lastmod>2024-10-18</lastmod>
  <changefreq>weekly</changefreq>
 </url>
 
 <url>
- <loc>http://hangnwen.com/contact.html</loc>
+ <loc>https://hangnwen.com/stationery.html</loc>
  <priority>0.3</priority>
- <lastmod>2024-10-12</lastmod>
+ <lastmod>2024-10-18</lastmod>
  <changefreq>weekly</changefreq>
 </url>
 
 <url>
- <loc>http://hangnwen.com/about.html</loc>
+ <loc>https://hangnwen.com/equipment.html</loc>
  <priority>0.3</priority>
- <lastmod>2024-10-12</lastmod>
+ <lastmod>2024-10-18</lastmod>
  <changefreq>weekly</changefreq>
 </url>
 
 <url>
- <loc>http://hangnwen.com/travel_destination.html</loc>
+ <loc>https://hangnwen.com/others.html</loc>
  <priority>0.3</priority>
- <lastmod>2024-10-12</lastmod>
+ <lastmod>2024-10-18</lastmod>
  <changefreq>weekly</changefreq>
 </url>
 
 <url>
- <loc>http://hangnwen.com/cdn-cgi/l/email-protection</loc>
+ <loc>https://hangnwen.com/age0-3.html</loc>
  <priority>0.3</priority>
- <lastmod>2024-10-12</lastmod>
+ <lastmod>2024-10-18</lastmod>
  <changefreq>weekly</changefreq>
 </url>
 
 <url>
- <loc>http://hangnwen.com</loc>
+ <loc>https://hangnwen.com/age3-12.html</loc>
  <priority>0.3</priority>
- <lastmod>2024-10-12</lastmod>
+ <lastmod>2024-10-18</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://hangnwen.com/age12-18.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2024-10-18</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://hangnwen.com/general.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2024-10-18</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://hangnwen.com/contact.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2024-10-18</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://hangnwen.com/about.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2024-10-18</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://hangnwen.com/travel_destination.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2024-10-18</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://hangnwen.com/destination_details.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2024-10-18</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://hangnwen.com/cdn-cgi/l/email-protection</loc>
+ <priority>0.3</priority>
+ <lastmod>2024-10-18</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://hangnwen.com</loc>
+ <priority>0.3</priority>
+ <lastmod>2024-10-18</lastmod>
  <changefreq>weekly</changefreq>
 </url>
 
