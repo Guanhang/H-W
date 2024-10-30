@@ -198,14 +198,142 @@
 
 <body>
 
-    <div style="border-width: 15px; border-style: solid; border-image: linear-gradient(to right, #2ab4fb, #6fe239, #f39c2c, #e12d5b) 1; border-radius: 8px; padding: 30px; background-color: #f9f9f9; max-width: 100%; margin: auto;">
-        <div style="overflow: hidden; position: relative; width: 100%; padding-top: 56.25%;">
-            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTIyhhQd9O3aqMflnIuoxJoxVHQk9UMW-tVvv-UfaesVqxZNiGecwziNgEGF04OTN_v6gicpctHfyjb/pubhtml?widget=true&amp;headers=false"
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
-                    allowfullscreen></iframe>
-        </div>
-    </div>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-family: Arial, sans-serif;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #2ab4fb;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        img {
+            max-width: 200px;
+            height: auto;
+            cursor: pointer; /* 显示手型光标 */
+        }
+        /* 放大图像样式 */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+    </style>
 
+    <table>
+        <tr>
+            <th>Category</th>
+            <th>Product ID</th>
+            <th>Image</th>
+            <th>Descripcion del Producto</th>
+            <th>Product Description</th>
+            <th>中文描述</th>
+        </tr>
+        <tr>
+            <td>Equipment</td>
+
+            <td>13</td>
+            <td><img src="img/products/age12-18/image13.png" alt="Product Image 13" onclick="openLightbox(this.src)"></td>
+            <td>Microscopio óptico, experimento científico para niños de alta definición, estudiantes de secundaria, el grado profesional en casa puede ver bacterias del mismo estilo que el examen de ingreso a la escuela secundaria</td>
+            <td>Optical microscope high-definition children's science experiment middle school students home professional grade can see bacteria the same style as the high school entrance examination</td>
+            <td>光学显微镜高清儿童科学小实验中学生家用专业级可看细菌中考同款</td>
+        </tr>
+        <tr>
+            <td>Toys</td>
+
+            <td>102</td>
+            <td><img src="img/products/age12-18/image93.png" alt="Product Image 93" onclick="openLightbox(this.src)"></td>
+            <td>Trampolín comercial para niños, trampolín para adultos, jardín de infantes al aire libre, gran red protectora, trampolín cuadrado</td>
+            <td>Household children's commercial trampoline adult trampoline outdoor kindergarten large protective net trampoline stall square</td>
+            <td>家用儿童商用跳跳床成人跳床户外幼儿园大型护网蹦蹦床摆摊广场</td>
+        </tr>
+        <tr>
+            <td>Equipment</td>
+
+            <td>111</td>
+            <td><img src="img/products/age12-18/image121.png" alt="Product Image 121" onclick="openLightbox(this.src)"></td>
+            <td>Zapatos y aletas de natación para hombres y mujeres, aletas de mariposa para nadar y bucear, placas de silicona para los pies, artefactos de entrenamiento profesional para adultos</td>
+            <td>Swimming shoes and fins for men and women, butterfly swimming and diving fins, silicone foot plates, adult professional training artifacts</td>
+            <td>游泳鞋脚蹼专用男女蝶形游泳潜水脚蹼硅胶脚板成人专业训练神器</td>
+        </tr>
+        <tr>
+            <td>Toys</td>
+
+            <td>138</td>
+            <td><img src="img/products/age12-18/image150.png" alt="Product Image 150" onclick="openLightbox(this.src)"></td>
+            <td>Weidong-Juego de diana para dardos magnéticos para el hogar, tablero objetivo de dardos de doble cara, imán volador, juguete de seguridad para niños</td>
+            <td>Weidong magnetic dart board set household double-sided dart target board magnet magnet flying target children's safety toy</td>
+            <td>维动磁性飞镖盘套装家用双面飞镖靶盘吸铁石磁铁飞标儿童安全玩具</td>
+        </tr>
+        <tr>
+            <td>Equipment</td>
+
+            <td>154</td>
+            <td><img src="img/products/age12-18/image143.png" alt="Product Image 143" onclick="openLightbox(this.src)"></td>
+            <td>Aro de baloncesto al aire libre sin perforaciones, aro de baloncesto estándar para adultos montado en la pared para interiores y exteriores, estante de tiro para niños, aro de baloncesto para el hogar</td>
+            <td>Punch-free outdoor basketball hoop indoor and outdoor wall-mounted adult standard basketball hoop children's shooting rack home basketball hoop</td>
+            <td>免打孔户外篮球框室内外壁挂式成人标准篮球圈儿童投篮架家用篮筐</td>
+        </tr>
+        <tr>
+            <td>Toys</td>
+
+            <td>156</td>
+            <td><img src="img/products/age12-18/image163.png" alt="Product Image 163" onclick="openLightbox(this.src)"></td>
+            <td>Balón de boxeo para niños, vaso vertical, Bola de velocidad de reacción, Bola de ventilación interactiva para padres e hijos, equipo de entrenamiento de boxeo, juguete</td>
+            <td>Children's boxing ball vertical tumbler reaction speed ball parent-child interactive vent ball boxing training equipment toy</td>
+            <td>儿童拳击球立式不倒翁反应速度球亲子互动发泄球拳击训练器材玩具</td>
+        </tr>
+        <tr>
+            <td>Equipment</td>
+
+            <td>174</td>
+            <td><img src="img/products/age12-18/image166.png" alt="Product Image 166" onclick="openLightbox(this.src)"></td>
+            <td>Pistola de pegamento de fusión en caliente hecha a mano para el hogar, pegamento de fusión en caliente, barra de pegamento fuerte de alta viscosidad, barra de pegamento de fusión en caliente, pistola de pegamento de fusión en caliente de 7-11mm</td>
+            <td>Hot melt glue gun handmade household hot melt glue grab high viscosity strong glue stick hot melt glue stick 7-11mm glue hot melt gun</td>
+            <td>热熔胶枪手工家用热融胶抢高粘强力胶棒热熔胶棒7-11mm胶水热熔枪</td>
+        </tr>
+    </table>
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img id="lightboxImage" src="" alt="放大图像">
+    </div>
+    
+    <script>
+    function openLightbox(src) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        lightboxImage.src = src;
+        lightbox.style.display = 'flex'; // 使用flex对齐
+    }
+    
+    function closeLightbox() {
+        const lightbox = document.getElementById('lightbox');
+        lightbox.style.display = 'none';
+    }
+    </script>
 </body>
 
 </body>
