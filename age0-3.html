@@ -196,14 +196,368 @@
         <!--/ bradcam_area  -->
         <body>
 
-            <div style="border-width: 15px; border-style: solid; border-image: linear-gradient(to right, #2ab4fb, #6fe239, #f39c2c, #e12d5b) 1; border-radius: 8px; padding: 30px; background-color: #f9f9f9; max-width: 100%; margin: auto;">
-                <div style="overflow: hidden; position: relative; width: 100%; padding-top: 56.25%;">
-                    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTIyhhQd9O3aqMflnIuoxJoxVHQk9UMW-tVvv-UfaesVqxZNiGecwziNgEGF04OTN_v6gicpctHfyjb/pubhtml?widget=true&amp;headers=false"
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
-                            allowfullscreen></iframe>
-                </div>
-            </div>
+            <style>
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin: 20px 0;
+                    font-family: Arial, sans-serif;
+                }
+                th, td {
+                    border: 1px solid #ddd;
+                    padding: 12px;
+                    text-align: left;
+                }
+                th {
+                    background-color: #2ab4fb;
+                    color: white;
+                }
+                tr:nth-child(even) {
+                    background-color: #f2f2f2;
+                }
+                tr:hover {
+                    background-color: #ddd;
+                }
+                img {
+                    max-width: 200px;
+                    height: auto;
+                    cursor: pointer; /* 显示手型光标 */
+                }
+                /* 放大图像样式 */
+                .lightbox {
+                    display: none;
+                    position: fixed;
+                    z-index: 1000;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.8);
+                    justify-content: center;
+                    align-items: center;
+                }
+                .lightbox img {
+                    max-width: 90%;
+                    max-height: 90%;
+                }
+            </style>
+
+            <table>
+                <tr>
+                    <th>Category</th>
+                    <th>Product ID</th>
+                    <th>Image</th>
+                    <th>Descripcion del Producto</th>
+                    <th>Product Description</th>
+                    <th>中文描述</th>
+                </tr>
+                <tr>
+                    <td>Toys</td>
+
+                    <td>22</td>
+                    <td><img src="img/products/age0-3/image23.png" alt="Product Image 23" onclick="openLightbox(this.src)"></td>
+                    <td>Apriete los tornillos para ensamblar el ensamblaje práctico de niños y niños de 3 a 6 años de edad, conjunto de bloques de construcción, caja de herramientas, caja de regalo de juguete</td>
+                    <td>Tighten screws to assemble boys and children's hands-on assembly of 3-6 years old building block set tool box toy gift box</td>
+                    <td>拧螺丝钉拼装男孩儿童动手组装3-6岁积木套装工具箱玩具礼物礼盒</td>
+                </tr>
+                <tr>
+                    <td>Toys</td>
+
+                    <td>24</td>
+                    <td><img src="img/products/age0-3/image17.png" alt="Product Image 17" onclick="openLightbox(this.src)"></td>
+                    <td>Tabletas magnéticas juguetes educativos para niños palos magnéticos imanes de inteligencia pegatinas de piedra que atraen el hierro bloques de construcción ensamblados para niñas y niños magnéticos</td>
+                    <td>Magnetic tablets children's educational toys magnetic sticks intelligence magnets iron-attracting stone stickers assembled building blocks for girls and boys magnetic</td>
+                    <td>磁力片儿童益智玩具磁力棒智力磁铁吸铁石贴拼装积木女男孩磁性</td>
+                </tr>
+                <tr>
+                    <td>Toys</td>
+
+                    <td>39</td>
+                    <td><img src="img/products/age0-3/image27.png" alt="Product Image 27" onclick="openLightbox(this.src)"></td>
+                    <td>Hape 40 bloques de construcción de arcoíris, juguetes educativos ensamblados para niños de 1 a 3 años, regalo de cumpleaños para bebés, material de madera</td>
+                    <td>Hape 40 rainbow building blocks assembled children's toys educational 1-3 year old baby birthday gift wooden material</td>
+                    <td>Hape40粒彩虹积木拼装儿童玩具益智1-3岁婴儿宝宝生日礼物木制质</td>
+                </tr>
+                <tr>
+                    <td>General</td>
+
+                    <td>68</td>
+                    <td><img src="img/products/age0-3/image70.png" alt="Product Image 70" onclick="openLightbox(this.src)"></td>
+                    <td>Silla de comedor para bebé KFC McDonald's para comer, asiento para bebé en casa, mesa de comedor para niños, hotel, restaurante comercial</td>
+                    <td>KFC McDonald's baby dining chair for eating baby home baby seat children's dining table hotel restaurant commercial</td>
+                    <td>肯德基麦当劳宝宝餐椅吃饭宝宝家用婴儿座椅儿童饭桌酒店餐厅商用</td>
+                </tr>
+                <tr>
+                    <td>General</td>
+
+                    <td>70</td>
+                    <td><img src="img/products/age0-3/image68.png" alt="Product Image 68" onclick="openLightbox(this.src)"></td>
+                    <td>Asiento de seguridad para niños, cojín auxiliar para asiento de coche, cojín de asiento portátil simple para bebé, cojín elevador para uso en coche</td>
+                    <td>Child safety seat auxiliary seat cushion for car baby simple portable seat cushion booster cushion for car use</td>
+                    <td>儿童安全座椅辅助坐垫汽车用宝宝婴儿简易便携式坐垫增高垫车载用</td>
+                </tr>
+                <tr>
+                    <td>General</td>
+
+                    <td>71</td>
+                    <td><img src="img/products/age0-3/image71.png" alt="Product Image 71" onclick="openLightbox(this.src)"></td>
+                    <td>Runben-mesa de comedor para bebé, silla de comedor plegable, multifuncional, portátil, para comer en casa, para bebé, de doble uso, sin instalación</td>
+                    <td>Runben baby dining table dining chair foldable multi-functional children's portable eating home baby dual-use installation-free</td>
+                    <td>润本宝宝餐桌餐椅可折叠多功能儿童便携吃饭家用婴儿两用免安装</td>
+                </tr>
+                <tr>
+                    <td>General</td>
+
+                    <td>75</td>
+                    <td><img src="img/products/age0-3/image62.png" alt="Product Image 62" onclick="openLightbox(this.src)"></td>
+                    <td>Correa para taburete en la cintura, productos multifuncionales para bebés para todas las estaciones, taburete individual universal con sujeción frontal para bebés, taburete liviano para sentarse con artefactos para bebés</td>
+                    <td>Waist stool strap, multi-functional baby products for all seasons, universal baby front-holding single stool, lightweight baby-holding artifact sitting stool</td>
+                    <td>腰凳背带四季多功能婴儿用品通用宝宝前抱式单凳轻便抱娃神器坐凳</td>
+                </tr>
+                <tr>
+                    <td>Toys</td>
+
+                    <td>77</td>
+                    <td><img src="img/products/age0-3/image80.png" alt="Product Image 80" onclick="openLightbox(this.src)"></td>
+                    <td>Libro de rasgaduras, libro de tela de educación temprana para bebés que no se puede romper pero que se puede masticar, 6 meses y 8 juguetes con velcro, libro silencioso, iluminación</td>
+                    <td>Tear-and-tear book baby early education cloth book that cannot be torn but can be chewed 6 months and 8 Velcro toys quiet book enlightenment</td>
+                    <td>撕撕书婴儿宝宝早教布书撕不烂可啃咬6个月8魔术贴玩具安静书启蒙</td>
+                </tr>
+                <tr>
+                    <td>Equipment</td>
+
+                    <td>78</td>
+                    <td><img src="img/products/age0-3/image72.png" alt="Product Image 72" onclick="openLightbox(this.src)"></td>
+                    <td>Urinario para niños con tubería de agua, urinario automático para orinar, urinario colgante en la pared, urinario para bebé, orinar de pie</td>
+                    <td>Children's urinal with water pipe urinal automatic urination wall hanging urinal baby urinal standing urination</td>
+                    <td>带水管尿盆儿童小便斗自动排尿挂墙尿壶宝宝小便池站立式尿尿</td>
+                </tr>
+                <tr>
+                    <td>Toys</td>
+
+                    <td>79</td>
+                    <td><img src="img/products/age0-3/image74.png" alt="Product Image 74" onclick="openLightbox(this.src)"></td>
+                    <td>BeiDuDu pedal piano soporte de fitness andador para bebés recién nacidos y niños pequeños rompecabezas para bebés de 0 a 3 años puede sentarse sobre el bebé</td>
+                    <td>BeiDuDu pedal piano fitness stand newborn infants and toddlers walker 0-3 years old baby puzzle can sit on the baby</td>
+                    <td>贝嘟嘟脚踏钢琴健身架新生婴幼儿童学步车0-3岁宝宝益智可坐婴儿</td>
+                </tr>
+                <tr>
+                    <td>Equipment</td>
+
+                    <td>80</td>
+                    <td><img src="img/products/age0-3/image81.png" alt="Product Image 81" onclick="openLightbox(this.src)"></td>
+                    <td>Gorro anticaída para protección de la cabeza de bebés pequeños, almohadilla de protección para la cabeza para aprender a caminar, almohada anticolisión, artefacto universal para todas las estaciones</td>
+                    <td>Baby toddler head protection anti-fall cap baby learning to walk head protection pad anti-collision pillow artifact universal for all seasons</td>
+                    <td>婴儿学步护头防摔帽宝宝学走路头部保护垫防撞枕神器四季通用</td>
+                </tr>
+                <tr>
+                    <td>Equipment</td>
+
+                    <td>82</td>
+                    <td><img src="img/products/age0-3/image87.png" alt="Product Image 87" onclick="openLightbox(this.src)"></td>
+                    <td>Juguete educativo de papel con ruido para bebés, dedo de 0 a 3 años, celebridad de Internet, no puede rasgar, caja de pañuelos para libros de tela para niños de educación temprana para bebés</td>
+                    <td>Baby educational noise paper toy 0-3 years old finger Internet celebrity can not tear baby early education children's cloth book tissue box</td>
+                    <td>宝宝益智响纸玩具0-3岁手指网红撕不烂婴儿早教儿童布书纸巾盒</td>
+                </tr>
+                <tr>
+                    <td>General</td>
+
+                    <td>83</td>
+                    <td><img src="img/products/age0-3/image78.png" alt="Product Image 78" onclick="openLightbox(this.src)"></td>
+                    <td>Newber Newbell-silla de comedor para bebé, asiento para aprender a sentarse y comer en casa, silla de crecimiento multifuncional para niños</td>
+                    <td>Newber Newbell dining chair baby baby home learning to sit and eat seat children's multi-functional growth sitting chair</td>
+                    <td>newber纽贝尔餐椅宝宝婴儿家用学坐吃饭座椅儿童多功能成长坐椅子</td>
+                </tr>
+                <tr>
+                    <td>General</td>
+
+                    <td>84</td>
+                    <td><img src="img/products/age0-3/image88.png" alt="Product Image 88" onclick="openLightbox(this.src)"></td>
+                    <td>Bañera para bebé recién nacido, bañera para bebé, bañera para niños, bañera plegable para sentarse y tumbarse en casa, bañera grande para niños</td>
+                    <td>Newborn baby bath tub baby bath tub children's bath tub foldable home sitting and lying large child bath</td>
+                    <td>新生婴儿洗澡盆宝宝浴盆儿童洗澡桶可折叠家用坐躺大号小孩泡澡</td>
+                </tr>
+                <tr>
+                    <td>Toys</td>
+
+                    <td>85</td>
+                    <td><img src="img/products/age0-3/image86.png" alt="Product Image 86" onclick="openLightbox(this.src)"></td>
+                    <td>Juguete multifuncional para bebé, regalo de cumpleaños, autobús de juguete para bebé, educación temprana, niños y niñas de 0 a 3 años</td>
+                    <td>Multifunctional baby toy birthday gift baby toy bus early education educational children 0-3 years old boys and girls</td>
+                    <td>多功能婴儿玩具生日礼物宝宝玩具巴士车早教益智少儿0-3岁男女孩</td>
+                </tr>
+                <tr>
+                    <td>Equipment</td>
+
+                    <td>86</td>
+                    <td><img src="img/products/age0-3/image104.png" alt="Product Image 104" onclick="openLightbox(this.src)"></td>
+                    <td>Inodoro para niños estilo escalera niño y niña escalera para bebé marco plegable cubierta de almohadilla asiento de inodoro niño.</td>
+                    <td>Children's toilet stair-style boy and girl baby ladder folding frame pad cover toilet seat child.</td>
+                    <td>儿童马桶坐便器楼梯式男孩女孩宝宝阶梯折叠架垫盖坐便圈小孩</td>
+                </tr>
+                <tr>
+                    <td>General</td>
+
+                    <td>93</td>
+                    <td><img src="img/products/age0-3/image94.png" alt="Product Image 94" onclick="openLightbox(this.src)"></td>
+                    <td>Goma de dentición para bebé, seta, molar pequeño de un mes, artefacto de mano anticomida, juguete de período oral para bebé, goma de mascar de silicona calmante</td>
+                    <td>Teething gum baby mushroom small month old molar anti-eating hand artifact baby oral period toy soothing silicone bite gum</td>
+                    <td>牙胶婴儿蘑菇小月龄磨牙防吃手神器宝宝口欲期玩具安抚硅胶咬胶</td>
+                </tr>
+                <tr>
+                    <td>General</td>
+
+                    <td>94</td>
+                    <td><img src="img/products/age0-3/image92.png" alt="Product Image 92" onclick="openLightbox(this.src)"></td>
+                    <td>Babero para comer para bebé, impermeable, sin lavado, suplemento alimenticio ultrafino, bolsa de arroz, babero a presión para alimentación de niños, toalla para la boca de verano</td>
+                    <td>Baby eating bib waterproof no-wash ultra-thin food supplement rice bag children's feeding snap bib mouth towel summer</td>
+                    <td>宝宝吃饭围兜防水免洗超薄辅食饭兜儿童小孩喂饭按扣围嘴口水巾夏</td>
+                </tr>
+                <tr>
+                    <td>Toys</td>
+
+                    <td>95</td>
+                    <td><img src="img/products/age0-3/image89.png" alt="Product Image 89" onclick="openLightbox(this.src)"></td>
+                    <td>Tobogán para interior de niños, combinación de columpio familiar multifuncional, parque de atracciones de jardín de infantes tres en uno</td>
+                    <td>Slide children's indoor home multi-functional family swing combination three-in-one kindergarten amusement park</td>
+                    <td>滑梯儿童室内 家用多功能家庭秋千组合三合一幼儿园游小孩乐场</td>
+                </tr>
+                <tr>
+                    <td>General</td>
+
+                    <td>98</td>
+                    <td><img src="img/products/age0-3/image102.png" alt="Product Image 102" onclick="openLightbox(this.src)"></td>
+                    <td>Valla para niños, estera para gatear para bebés, juego de valla, barandilla de seguridad para bebés, estera para niños pequeños, estera para escalar, cerca del suelo</td>
+                    <td>Children's fence baby crawling mat game fence guardrail baby safety toddler mat climbing mat above ground fence</td>
+                    <td>儿童围栏宝宝爬行垫游戏围栏护栏婴儿安全学步垫子爬爬垫地上栅栏</td>
+                </tr>
+                <tr>
+                    <td>General</td>
+
+                    <td>100</td>
+                    <td><img src="img/products/age0-3/image82.png" alt="Product Image 82" onclick="openLightbox(this.src)"></td>
+                    <td>Cuenco de suplemento de alimentos para bebés para principiantes, ventosa de silicona, cuenco especial de calidad alimentaria para niños, juego de vajilla anticaída</td>
+                    <td>Beginner infant baby food supplement bowl silicone suction cup food grade children's special bowl anti-fall tableware set</td>
+                    <td>初学者婴幼儿宝宝辅食碗硅胶吸盘碗食品级儿童专用碗防摔餐具套装</td>
+                </tr>
+                <tr>
+                    <td>Toys</td>
+
+                    <td>101</td>
+                    <td><img src="img/products/age0-3/image112.png" alt="Product Image 112" onclick="openLightbox(this.src)"></td>
+                    <td>Teléfono móvil para niños, cámara de juguete, niño, niña, bebé, educación temprana, música, teléfono de simulación, bebé puede masticar</td>
+                    <td>Children's mobile phone toy camera boy girl baby educational early education music simulation phone baby can chew</td>
+                    <td>儿童手机玩具照相机男孩女孩宝宝益智早教音乐仿真电话婴儿可啃咬</td>
+                </tr>
+                <tr>
+                    <td>General</td>
+
+                    <td>104</td>
+                    <td><img src="img/products/age0-3/image97.png" alt="Product Image 97" onclick="openLightbox(this.src)"></td>
+                    <td>Alfombra de suelo en miniatura para casa de muñecas, modelo de suelo para casa de muñecas, juguetes para niños, mini estera para gatear, juguete de construcción</td>
+                    <td>Doll house miniature floor mat mini doll house floor model children's toys mini crawling mat building toy</td>
+                    <td>娃娃屋微缩地垫迷你娃屋地板模型儿童玩具迷你爬行垫拼搭玩具</td>
+                </tr>
+                <tr>
+                    <td>General</td>
+
+                    <td>105</td>
+                    <td><img src="img/products/age0-3/image105.png" alt="Product Image 105" onclick="openLightbox(this.src)"></td>
+                    <td>Plato de cena para bebé, tipo de ventosa para bebé doméstico, vajilla para niños de gran capacidad, plato de rejilla de una sola pieza de dibujos animados, silicona anticaída</td>
+                    <td>Baby dinner plate household baby suction cup type large capacity children's tableware cartoon one-piece grid plate anti-fall silicone</td>
+                    <td>宝宝餐盘家用婴儿吸盘式大容量儿童餐具卡通一体式分格盘防摔硅胶</td>
+                </tr>
+                <tr>
+                    <td>General</td>
+
+                    <td>106</td>
+                    <td><img src="img/products/age0-3/image107.png" alt="Product Image 107" onclick="openLightbox(this.src)"></td>
+                    <td>Cortadora de pelo para bebé Konka, afeitadora ultrasilenciosa para bebés recién nacidos, cortadora de pelo silenciosa para niños sin interferencias, artefacto cortapelos</td>
+                    <td>Konka baby hair clipper ultra-quiet baby shaving newborn children's silent hair clipper without jamming hair clipper artifact</td>
+                    <td>康佳婴儿理发器超静音宝宝剃头新生儿童无声发推不卡发电推子神器</td>
+                </tr>
+                <tr>
+                    <td>Toys</td>
+
+                    <td>109</td>
+                    <td><img src="img/products/age0-3/image110.png" alt="Product Image 110" onclick="openLightbox(this.src)"></td>
+                    <td>Kechao proyector para niños máquina de cuentos juguete luminoso teatro bebé hora de dormir educación temprana linterna educativa luz cielo estrellado</td>
+                    <td>Kechao children's projector story machine luminous toy theater baby bedtime early education educational flashlight light starry sky</td>
+                    <td>科巢儿童投影仪故事机发光玩具剧场宝宝睡前早教益智手电筒灯星空</td>
+                </tr>
+                <tr>
+                    <td>Toys</td>
+
+                    <td>113</td>
+                    <td><img src="img/products/age0-3/image106.png" alt="Product Image 106" onclick="openLightbox(this.src)"></td>
+                    <td>Pandereta de dibujos animados jardín de infantes aplaudir tambor campana instrumento de percusión educativo educación temprana venta al por mayor accesorios de rendimiento de música de baile</td>
+                    <td>Cartoon tambourine kindergarten hand clap drum bell percussion instrument educational early education wholesale dance music performance props</td>
+                    <td>卡通铃鼓幼儿园手拍鼓铃铛打击乐器益智早教批发舞蹈音乐表演道具</td>
+                </tr>
+                <tr>
+                    <td>General</td>
+
+                    <td>118</td>
+                    <td><img src="img/products/age0-3/image115.png" alt="Product Image 115" onclick="openLightbox(this.src)"></td>
+                    <td>Shangyouyou Plato Compartido para Niños Tipo Ventosa Plato De Tazón De Entrenamiento para Comer Independiente Plato para Niños Juego De Vajilla Complementaria</td>
+                    <td>Shangyouyou Children's Compartmented Dinner Plate Suction Cup Type Independent Eating Training Bowl Plate Children's Food Complementary Tableware Set</td>
+                    <td>尚优悠儿童分格餐盘吸盘式自主进食吃饭训练碗盘儿童辅食餐具套装</td>
+                </tr>
+                <tr>
+                    <td>Toys</td>
+
+                    <td>127</td>
+                    <td><img src="img/products/age0-3/image130.png" alt="Product Image 130" onclick="openLightbox(this.src)"></td>
+                    <td>Remolque de madera con dibujos animados para niños, cuerda de tracción, juguete para bebé, niño y niña, vehículo de entrenamiento para la primera infancia</td>
+                    <td>Children's cartoon pull animal wooden trailer traction rope baby toy boy and girl early childhood training vehicle</td>
+                    <td>儿童卡通拉线动物木制拖车牵引绳宝宝玩具男女孩早教学步训练车</td>
+                </tr>
+                <tr>
+                    <td>Equipment</td>
+
+                    <td>147</td>
+                    <td><img src="img/products/age0-3/image17.png" alt="Product Image 139" onclick="openLightbox(this.src)"></td>
+                    <td>Asiento WC Infantil Italiano Chicco Auxiliar Niña Niño 4 a 6 Años Cojín WC Infantil Mediano y Grande</td>
+                    <td>Italian Chicco children's toilet seat girl's auxiliary aid boy 4 to 6 years old middle and large children's toilet cushion</td>
+                    <td>意大利智高儿童坐便器马桶圈女孩辅助器男宝4到6岁中大童厕所软垫</td>
+                </tr>
+                <tr>
+                    <td>Toys</td>
+
+                    <td>164</td>
+                    <td><img src="img/products/age0-3/image157.png" alt="Product Image 157" onclick="openLightbox(this.src)"></td>
+                    <td>Tirador de cubo de escondite de payaso, palo telescópico, juguetes divertidos para padres e hijos, guardería, 1-2-3 años</td>
+                    <td>Clown hide-and-seek bucket puller telescopic stick parent-child baby children kindergarten funny toys 1-2-3 years old</td>
+                    <td>小丑躲猫猫拔拔桶人伸缩棒亲子宝宝儿童幼儿园逗乐玩具1-2-3岁</td>
+                </tr>
+                <tr>
+                    <td>Toys</td>
+
+                    <td>172</td>
+                    <td><img src="img/products/age0-3/image168.png" alt="Product Image 168" onclick="openLightbox(this.src)"></td>
+                    <td>El entrenamiento con cuentas para bebés y niños pequeños se centra en la inteligencia del bebé, el cordón, los juguetes educativos de educación temprana que activan el cerebro y las partículas de bloques de construcción para niñas.</td>
+                    <td>Infant and toddler bead training focuses on baby intelligence, cord, brain-activating early education educational toys, building block particles for girls</td>
+                    <td>婴幼儿串珠训练专注宝宝智力线绳动脑早教益智玩具积木颗粒女孩</td>
+                </tr>
+            </table>
         
+            <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+                <img id="lightboxImage" src="" alt="放大图像">
+            </div>
+            
+            <script>
+            function openLightbox(src) {
+                const lightbox = document.getElementById('lightbox');
+                const lightboxImage = document.getElementById('lightboxImage');
+                lightboxImage.src = src;
+                lightbox.style.display = 'flex'; // 使用flex对齐
+            }
+            
+            function closeLightbox() {
+                const lightbox = document.getElementById('lightbox');
+                lightbox.style.display = 'none';
+            }
+            </script>
         </body>
         
         
