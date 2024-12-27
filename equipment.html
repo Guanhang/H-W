@@ -127,24 +127,14 @@
                                                     Categories
                                                 </a>
                                                 <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
-                                                    <a class="dropdown-item" href="toys.html">Toys</a>
-                                                    <a class="dropdown-item" href="stationery.html">Stationery</a>
+                                                    <a class="dropdown-item" href="automation.html">Automation</a>
+                                                    <a class="dropdown-item" href="cnc.html">CNC</a>
                                                     <a class="dropdown-item" href="equipment.html">Equipment</a>
                                                     <a class="dropdown-item" href="others.html">Others</a>
                                                     <!-- 其他菜单项 -->
                                                 </div>
                                             </li>
                                             <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="#" id="rangeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    Range
-                                                </a>
-                                                <div class="dropdown-menu" aria-labelledby="rangeDropdown">
-                                                    <a class="dropdown-item" href="age0-3.html">AGE 0-3</a>
-                                                    <a class="dropdown-item" href="age3-12.html">AGE 3-12</a>
-                                                    <a class="dropdown-item" href="age12-18.html">AGE 12-18</a>
-                                                    <a class="dropdown-item" href="general.html">General</a>
-                                                    <!-- 其他菜单项 -->
-                                                </div>
                                             </li>
                                             <li class="nav-item">
                                                 <a class="nav-link" href="contact.html">Contact</a>
@@ -197,15 +187,200 @@
 </body>
     
 <body>
-
     <div style="border-width: 15px; border-style: solid; border-image: linear-gradient(to right, #2ab4fb, #6fe239, #f39c2c, #e12d5b) 1; border-radius: 8px; padding: 30px; background-color: #f9f9f9; max-width: 100%; margin: auto;">
-        <div style="overflow: hidden; position: relative; width: 100%; padding-top: 56.25%;">
-            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTIyhhQd9O3aqMflnIuoxJoxVHQk9UMW-tVvv-UfaesVqxZNiGecwziNgEGF04OTN_v6gicpctHfyjb/pubhtml?widget=true&amp;headers=false"
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
-                    allowfullscreen></iframe>
+        <!-- 品牌筛选部分 -->
+        <div style="display: flex; margin-bottom: 20px;">
+            <div style="width: 20%; border-right: 2px solid #ddd; padding-right: 20px;">
+                <h3 style="margin: 0 0 10px;">Brands</h3>
+                <ul style="list-style-type: none; padding: 0; margin: 0;">
+                    <li>
+                        <label>
+                            <input type="checkbox" class="brand-filter" value="Siemens"> Siemens
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="brand-filter" value="Delta"> Delta
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="brand-filter" value="Festo"> Festo
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="brand-filter" value="Schneider"> Schneider
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" class="brand-filter" value="AB"> AB
+                        </label>
+                    </li>                    <li>
+                        <label>
+                            <input type="checkbox" class="brand-filter" value="ABB"> ABB
+                        </label>
+                    </li>                    <li>
+                        <label>
+                            <input type="checkbox" class="brand-filter" value="GE"> GE
+                        </label>
+                    </li>                    <li>
+                        <label>
+                            <input type="checkbox" class="brand-filter" value="Omron"> Omron
+                        </label>
+                    </li>                    <li>
+                        <label>
+                            <input type="checkbox" class="brand-filter" value="Mitsubishi"> Mitsubishi
+                        </label>
+                    </li>                    <li>
+                        <label>
+                            <input type="checkbox" class="brand-filter" value="Sick"> Sick
+                        </label>
+                    </li>                    <li>
+                        <label>
+                            <input type="checkbox" class="brand-filter" value="Beckhoff"> Bechhoff
+                        </label>
+                    </li>                    <li>
+                        <label>
+                            <input type="checkbox" class="brand-filter" value="Phoenix Contact"> Phoenix Contact
+                        </label>
+                    </li>                    <li>
+                        <label>
+                            <input type="checkbox" class="brand-filter" value="P+F"> P+F
+                        </label>
+                    </li>                    <li>
+                        <label>
+                            <input type="checkbox" class="brand-filter" value="Autonics"> Autonics
+                        </label>
+                    </li>                    <li>
+                        <label>
+                            <input type="checkbox" class="brand-filter" value="SMC"> SMC
+                        </label>
+                    </li>                    <li>
+                        <label>
+                            <input type="checkbox" class="brand-filter" value="IFM"> IFM
+                        </label>
+                    </li>                    <li>
+                        <label>
+                            <input type="checkbox" class="brand-filter" value="Weinview"> Weinview
+                        </label>
+                    </li>                    <li>
+                        <label>
+                            <input type="checkbox" class="brand-filter" value="Weintek"> Weintek
+                        </label>
+                    </li>                    <li>
+                        <label>
+                            <input type="checkbox" class="brand-filter" value="Airtac"> Airtac
+                        </label>
+                    </li>                    <li>
+                        <label>
+                            <input type="checkbox" class="brand-filter" value="Delixi"> Delixi
+                        </label>
+                    </li>                    <li>
+                        <label>
+                            <input type="checkbox" class="brand-filter" value="Compatible"> Compatible
+                        </label>
+                    </li>                    <li>
+                        <label>
+                            <input type="checkbox" class="brand-filter" value="Sanci"> Sanci
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <!-- 商品展示部分 -->
+            <div style="width: 80%; padding-left: 20px;">
+                <div id="product-container" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+                    <!-- 商品框1 -->
+                    <div class="product-item" data-brand="Siemens" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; text-align: center; background-color: #fff;">
+                        <img src="automation/6ED1052-1MD08-0BA2.png" alt="商品图片" style="width: 100%; border-radius: 4px;">
+                        <h4 style="margin: 10px 0 5px;">Logo 8.2</h4>
+                        <p style="margin: 0; color: #888;">6ED1052-1MD08-0BA2</p>
+                        <p style="margin: 0; font-weight: bold;">Siemens</p>
+                    </div>
+                    <!-- 商品框2 -->
+                    <div class="product-item" data-brand="Schneider" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; text-align: center; background-color: #fff;">
+                        <img src="automation/SR3B101BD.png" alt="商品图片" style="width: 100%; border-radius: 4px;">
+                        <h4 style="margin: 10px 0 5px;">Zelio Logic SR2 SR3</h4>
+                        <p style="margin: 0; color: #888;">SR3B101BD</p>
+                        <p style="margin: 0; font-weight: bold;">Schneider</p>
+                    </div>
+                    <!-- 商品框3 -->
+                    <div class="product-item" data-brand="Siemens" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; text-align: center; background-color: #fff;">
+                        <img src="automation/6AV2123-2GB03-0AX0.png" alt="商品图片" style="width: 100%; border-radius: 4px;">
+                        <h4 style="margin: 10px 0 5px;">SIMATIC HMI KTP700 Basic</h4>
+                        <p style="margin: 0; color: #888;">6AV2123-2GB03-0AX0</p>
+                        <p style="margin: 0; font-weight: bold;">Siemens</p>
+                    </div>
+                    <!-- 商品框4 -->
+                    <div class="product-item" data-brand="Compatible" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; text-align: center; background-color: #fff;">
+                        <img src="automation/6GK1571-0BA00-0AA0.png" alt="商品图片" style="width: 100%; border-radius: 4px;">
+                        <h4 style="margin: 10px 0 5px;">Compatible program cable for Siemens</h4>
+                        <p style="margin: 0; color: #888;">6GK1571-0BA00-0AA0</p>
+                        <p style="margin: 0; font-weight: bold;">Compatible</p>
+                    </div>
+                    <!-- 商品框4 -->
+                    <div class="product-item" data-brand="品牌4" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; text-align: center; background-color: #fff;">
+                        <img src="https://via.placeholder.com/150" alt="商品图片" style="width: 100%; border-radius: 4px;">
+                        <h4 style="margin: 10px 0 5px;">产品名称4</h4>
+                        <p style="margin: 0; color: #888;">件号: JKL012</p>
+                        <p style="margin: 0; font-weight: bold;">品牌: 品牌4</p>
+                    </div>
+                    <!-- 商品框4 -->
+                    <div class="product-item" data-brand="品牌4" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; text-align: center; background-color: #fff;">
+                        <img src="https://via.placeholder.com/150" alt="商品图片" style="width: 100%; border-radius: 4px;">
+                        <h4 style="margin: 10px 0 5px;">产品名称4</h4>
+                        <p style="margin: 0; color: #888;">件号: JKL012</p>
+                        <p style="margin: 0; font-weight: bold;">品牌: 品牌4</p>
+                    </div>
+                    <!-- 商品框4 -->
+                    <div class="product-item" data-brand="品牌4" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; text-align: center; background-color: #fff;">
+                        <img src="https://via.placeholder.com/150" alt="商品图片" style="width: 100%; border-radius: 4px;">
+                        <h4 style="margin: 10px 0 5px;">产品名称4</h4>
+                        <p style="margin: 0; color: #888;">件号: JKL012</p>
+                        <p style="margin: 0; font-weight: bold;">品牌: 品牌4</p>
+                    </div>
+                    <!-- 商品框4 -->
+                    <div class="product-item" data-brand="品牌4" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; text-align: center; background-color: #fff;">
+                        <img src="https://via.placeholder.com/150" alt="商品图片" style="width: 100%; border-radius: 4px;">
+                        <h4 style="margin: 10px 0 5px;">产品名称4</h4>
+                        <p style="margin: 0; color: #888;">件号: JKL012</p>
+                        <p style="margin: 0; font-weight: bold;">品牌: 品牌4</p>
+                    </div>
+                    <!-- 商品框4 -->
+                    <div class="product-item" data-brand="品牌4" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; text-align: center; background-color: #fff;">
+                        <img src="https://via.placeholder.com/150" alt="商品图片" style="width: 100%; border-radius: 4px;">
+                        <h4 style="margin: 10px 0 5px;">产品名称4</h4>
+                        <p style="margin: 0; color: #888;">件号: JKL012</p>
+                        <p style="margin: 0; font-weight: bold;">品牌: 品牌4</p>
+                    </div>                                                                                                                            
+                </div>
+            </div>
         </div>
     </div>
 
+    <script>
+        // 筛选功能
+        const checkboxes = document.querySelectorAll('.brand-filter');
+        const products = document.querySelectorAll('.product-item');
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                const selectedBrands = Array.from(checkboxes)
+                    .filter(cb => cb.checked)
+                    .map(cb => cb.value);
+
+                products.forEach(product => {
+                    const productBrand = product.getAttribute('data-brand');
+                    if (selectedBrands.length === 0 || selectedBrands.includes(productBrand)) {
+                        product.style.display = 'block';
+                    } else {
+                        product.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </body>
