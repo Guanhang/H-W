@@ -180,57 +180,52 @@
             </div> <!-- #sticky-header 结束 -->
         </div> <!-- .header-area 结束 -->
     </header>
-
-        <!-- bradcam_area  -->
-        <div class="bradcam_area bradcam_bg_5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="bradcam_text text-center">
-                            <h3>Siemens</h3>
-                            <p>Siemens is a German engineering and technology giant, known for its innovative products and solutions in areas such as industrial automation, energy, transportation, and medical technology. Founded in 1847, the brand is synonymous with quality, efficiency, and innovation.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--/ bradcam_area  -->
 </body>
     
 <body>
     <div style="border-width: 15px; border-style: solid; border-image: linear-gradient(to right, #2ab4fb, #6fe239, #f39c2c, #e12d5b) 1; border-radius: 8px; padding: 30px; background-color: #f9f9f9; max-width: 100%; margin: auto;">
-
-            <!-- 商品展示部分 -->
-            <div style="width: 100%; padding-left: 20px; box-sizing: border-box;">
-                <div id="product-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; overflow: hidden;">
-                    <!-- 商品框1 -->
-                    <div class="product-item" data-brand="Siemens" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; text-align: center; background-color: #fff;">
-                        <a href="6ED10521MD080BA2.html"><img src="../siemens/6ED10521MD080BA2.png" style="width: 100%; border-radius: 4px;"></a>
-                        <h4 style="margin: 10px 0 5px;">
-                            <a href="6ED10521MD080BA2.html">6ED1052-1MD08-0BA2</a>
-                        </h4>
-                        <p style="margin: 0; color: #888;">Logo 8.2</p>
+        <!-- 商品展示部分 -->
+        <div style="width: 100%; padding-left: 20px;">
+            <div id="product-container">
+                <!-- 商品框1 -->
+                <div class="product-item" data-brand="ABB" style="display: flex; border: 1px solid #ddd; border-radius: 8px; padding: 20px; background-color: #fff;">
+                    <!-- 左边：产品大图 -->
+                    <div style="flex: 1; margin-right: 20px;">
+                        <div style="border: 3px solid #ddd; border-radius: 10px; overflow: hidden;">
+                            <img src="../abb/acs5100105A64.png" style="width: 100%; border-radius: 10px;">
+                        </div>   
                     </div>
-                    <!-- 商品框2 -->
-                    <div class="product-item" data-brand="Siemens" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; text-align: center; background-color: #fff;">
-                        <a href="6AV21232GB030AX0.html"><img src="../siemens/6AV21232GB030AX0.png" style="width: 100%; border-radius: 4px;"></a>
-                        <h4 style="margin: 10px 0 5px;">
-                            <a href="6AV21232GB030AX0.html">6AV2123-2GB03-0AX0</a>
-                        </h4>
-                        <p style="margin: 0; color: #888;">SIMATIC HMI KTP700 Basic</p>
-                    </div>
-                    <!-- 商品框3 -->
-                    <div class="product-item" data-brand="Siemens" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; text-align: center; background-color: #fff;">
-                        <a href="6GK15710BA000AA0.html"><img src="../siemens/6GK15710BA000AA0.png" style="width: 100%; border-radius: 4px;"></a>
-                        <h4 style="margin: 10px 0 5px;">
-                            <a href="6GK15710BA000AA0.html">6GK1571-0BA00-0AA0</a>
-                        </h4>
-                        <p style="margin: 0; color: #888;">PC adapter USB A2 USB adapter</p>
+                    <!-- 右边：产品信息 -->
+                    <div style="flex: 2;">
+                        <p style="margin: 0 0 10px; font-size: 1.5em; font-weight: bold; color: #000000;">Description </p>
+                        <p>Electrical transformers, static converters and inductors 5.6A, 380V, IP21</p>
+                        <p style="margin: 0 0 10px; font-size: 1.25em; font-weight: bold; color: #000000;">Product Reference: </p> 
+                        <p style="color: #888;">ACS510-01-05A6-4</p>
+                        <p style="margin: 0 0 10px; font-size: 1.25em; font-weight: bold; color: #000000;">HSCode: </p>
+                        <p style="color: #888;">85044099</p>
+                        <p style="margin: 0 0 10px; font-size: 1.25em; font-weight: bold; color: #000000;">Weight: </p>
+                        <p style="color: #888;">6.1KG</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
+    <style>
+        /* 响应式布局 */
+        @media (max-width: 768px) {
+            .product-item {
+                flex-direction: column; /* 在小屏幕上改为垂直布局 */
+            }
+            .product-item > div {
+                margin-right: 0; /* 移除图片的右边距 */
+                margin-bottom: 20px; /* 增加图片与信息之间的间距 */
+            }
+            .product-item img {
+                max-width: 100%; /* 确保图片在小屏幕上不会溢出 */
+            }
+        }
+    </style>
 
     <script>
         // 筛选功能
