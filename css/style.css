@@ -2087,7 +2087,14 @@ h3 {
 .bradcam_bg_9 {
   background-image: url(../img/banner/bradcam9.png);
 }
-
+/* line 10, ../../Arafath/CL/December/231. Travel-02/HTML/scss/_bradcam.scss */
+.bradcam_bg_10 {
+  background-image: url(../img/banner/bradcam10.png);
+}
+/* line 10, ../../Arafath/CL/December/231. Travel-02/HTML/scss/_bradcam.scss */
+.bradcam_bg_11 {
+  background-image: url(../img/banner/bradcam11.png);
+}
 /* line 13, ../../Arafath/CL/December/231. Travel-02/HTML/scss/_bradcam.scss */
 .bradcam_area {
   background-size: cover;
