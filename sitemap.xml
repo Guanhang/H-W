@@ -1,107 +1,207 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
-    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-       http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
->
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
 
 <url>
- <loc>http://hangnwen.com/index.html</loc>
- <priority>0.3</priority>
- <lastmod>2024-12-27</lastmod>
- <changefreq>weekly</changefreq>
+  <loc>https://www.hangnwen.com/</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/index.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/cnc.html</loc>
+  <lastmod>2025-02-24T03:52:33+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/equipment.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/others.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/contact.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/about.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/siemens/siemens.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/schneider/schneider.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/delta/delta.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/festo/festo.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/abb/abb.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/ab/ab.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/omron/omron.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/omron/my2ngs.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/siemens/6ED10521MD080BA2.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/siemens/6AV21232GB030AX0.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/siemens/6GK15710BA000AA0.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/schneider/SR3B101BD.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/schneider/LC1D32BDC.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/schneider/RXM2LB2BD.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/schneider/ATV610U22N4.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/schneider/A9F18110.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/delta/VFD4A8MS23ANSAA.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/delta/VFD13AM43ANSAA.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/delta/VFD300CP43B-21.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/delta/VFD1320CP43B-00.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/festo/QSX12.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/festo/QS184.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/festo/PUNHX0.75BL.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/festo/DSNU1210PA.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/abb/a93010.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/abb/acs5100105A64.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/abb/sh202c10.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/abb/ta25du25.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/ab/2711rt7t.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/omron/e3zd612m.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.hangnwen.com/automation/omron/e2ex3d1n.html</loc>
+  <lastmod>2025-02-24T03:52:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 
-<url>
- <loc>http://hangnwen.com/automation.html</loc>
- <priority>0.3</priority>
- <lastmod>2024-12-27</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-
-<url>
- <loc>http://hangnwen.com/cnc.html</loc>
- <priority>0.3</priority>
- <lastmod>2024-12-27</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-
-<url>
- <loc>http://hangnwen.com/equipment.html</loc>
- <priority>0.3</priority>
- <lastmod>2024-12-27</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-
-<url>
- <loc>http://hangnwen.com/others.html</loc>
- <priority>0.3</priority>
- <lastmod>2024-12-27</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-
-<url>
- <loc>http://hangnwen.com/contact.html</loc>
- <priority>0.3</priority>
- <lastmod>2024-12-27</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-
-<url>
- <loc>http://hangnwen.com/about.html</loc>
- <priority>0.3</priority>
- <lastmod>2024-12-27</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-
-<url>
- <loc>http://hangnwen.com/toys.html</loc>
- <priority>0.3</priority>
- <lastmod>2024-12-27</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-
-<url>
- <loc>http://hangnwen.com/stationery.html</loc>
- <priority>0.3</priority>
- <lastmod>2024-12-27</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-
-<url>
- <loc>http://hangnwen.com/age0-3.html</loc>
- <priority>0.3</priority>
- <lastmod>2024-12-27</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-
-<url>
- <loc>http://hangnwen.com/destination_details.html</loc>
- <priority>0.3</priority>
- <lastmod>2024-12-27</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-
-<url>
- <loc>http://hangnwen.com/general.html</loc>
- <priority>0.3</priority>
- <lastmod>2024-12-27</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-
-<url>
- <loc>http://hangnwen.com/cdn-cgi/l/email-protection</loc>
- <priority>0.3</priority>
- <lastmod>2024-12-27</lastmod>
- <changefreq>weekly</changefreq>
-</url>
-
-<url>
- <loc>http://hangnwen.com</loc>
- <priority>0.3</priority>
- <lastmod>2024-12-27</lastmod>
- <changefreq>weekly</changefreq>
-</url>
 
 </urlset>
