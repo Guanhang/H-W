@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LTA教师简介</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", "Times New Roman", sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #003366;
+        }
+        .header h1 {
+            color: #003366;
+            margin: 0;
+        }
+        .photo-upload {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .photo-container {
+            width: 180px;
+            height: 220px;
+            border: 2px dashed #ccc;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+        #preview {
+            max-width: 100%;
+            max-height: 100%;
+            display: none;
+        }
+        .upload-text {
+            color: #666;
+            text-align: center;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        .upload-btn {
+            background-color: #003366;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .section {
+            margin: 25px 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 6px;
+        }
+        .section h2 {
+            color: #003366;
+            margin-top: 0;
+            font-size: 18px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 8px;
+        }
+        .form-group {
+            margin: 12px 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        .btn-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        #downloadPdf {
+            background-color: #003366;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #downloadPdf:hover {
+            background-color: #002244;
+        }
+        .english {
+            color: #666;
+            font-style: italic;
+            margin-left: 10px;
+        }
+        .page-header {
+            display: flex;           /* 启用 Flex 布局 */
+            align-items: center;     /* 垂直居中对齐 */
+            justify-content: flex-start; /* 默认从左开始排列，也可用 space-between */
+            gap: 20px;               /* Logo 和标题之间的间距，可调整 */
+            padding: 20px;           /* 可选：内边距 */
+            border-bottom: 1px solid #eee; /* 可选：底部分隔线 */
+        }
+        /* Logo 容器 */
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        /* Logo 图标 */
+        .logo-icon {
+            height: 70px; /* 根据需要调整 Logo 高度 */
+            width: auto;  /* 保持比例 */
+        }
+        /* 标题区域 */
+        .header-title h1 {
+            margin: 0;    /* 去掉默认的 h1 外边距 */
+            font-size: 24px;
+            color: #333;
+        }
+        .header-title .english {
+            color: #666;  /* 可选：英文部分颜色稍浅 */
+            font-style: italic;
+        }
+        .page-header h1 {
+            font-size: 38px; /* 原来可能是 24px，现在调大 */
+            margin: 0;       /* 去掉默认 margin，避免布局问题 */
+            color: #333;     /* 可选：文字颜色 */
+        }
+    </style>
+</head>
+<body>
+    <div class="page-header">
+        <div class="logo">
+            <img src="./images/logo.png" alt="Logo" class="logo-icon">
+            <!-- 如果有 logo-text，比如网站名，可以放在这里 -->
+            <!-- <div class="logo-text">你的网站名</div> -->
+        </div>
+        <div class="header-title">
+            <h1>教师简介模板<br> <span class="english">Teacher Profile Template</span></h1>
+        </div>
+    </div>
+
+    <div class="photo-upload">
+        <div class="photo-container" onclick="document.getElementById('photoInput').click()">
+            <img id="preview" alt="预览照片">
+            <div id="upload-placeholder" class="upload-text">
+                点击上传照片<br>
+                <span class="english">Upload Photo</span>
+            </div>
+        </div>
+        <input type="file" id="photoInput" accept="image/*" style="display: none;">
+        <button class="upload-btn" onclick="document.getElementById('photoInput').click()">
+            选择照片 <span class="english">Select Photo</span>
+        </button>
+    </div>
+
+    <div class="section">
+        <h2>基本信息 <span class="english">Basic Information</span></h2>
+        <div class="form-group">
+            <label>姓名 <span class="english">Name</span></label>
+            <input type="text" placeholder="请输入姓名">
+        </div>
+        <div class="form-group">
+            <label>教授语言 <span class="english">Languages Taught</span></label>
+            <input type="text" placeholder="如：英语、汉语、法语等 / e.g., English, Mandarin, French">
+        </div>
+        <div class="form-group">
+            <label>教学年限 <span class="english">Teaching Experience</span></label>
+            <input type="text" placeholder="请输入年限 / years">
+        </div>
+        <div class="form-group">
+            <label>所在地区 <span class="english">Location</span></label>
+            <input type="text" placeholder="国家/城市 / Country/City">
+        </div>
+        <div class="form-group">
+            <label>联系方式（仅联盟内可见） <span class="english">Contact (Visible within LTA)</span></label>
+            <input type="text" placeholder="如：邮箱/电话 / e.g., Email/Phone">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>专业背景 <span class="english">Professional Background</span></h2>
+        <div class="form-group">
+            <label>教育相关学历 <span class="english">Educational Qualification</span></label>
+            <input type="text" placeholder="如：应用语言学硕士、对外汉语教学专业等 / e.g., MA in Applied Linguistics, TCFL Certificate">
+        </div>
+        <div class="form-group">
+            <label>核心教学资质 <span class="english">Key Certifications</span></label>
+            <input type="text" placeholder="如：TEFL/TESOL证书、汉语教师资格证等 / e.g., TEFL/TESOL, Mandarin Teaching Certificate">
+        </div>
+        <div class="form-group">
+            <label>擅长教学领域 <span class="english">Specialized Teaching Areas</span></label>
+            <input type="text" placeholder="如：青少年英语、商务汉语、留学语言备考等 / e.g., Teenage English, Business Chinese, Study Abroad Language Prep">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>教学特色 <span class="english">Teaching Style</span></h2>
+        <div class="form-group">
+            <label>教学风格 <span class="english">Instructional Approach</span></label>
+            <textarea placeholder="如：互动式课堂、沉浸式情境教学、注重应试技巧等 / e.g., Interactive classes, Immersive situational teaching, Exam skill focus"></textarea>
+        </div>
+        <div class="form-group">
+            <label>独特优势 <span class="english">Unique Strengths</span></label>
+            <textarea placeholder="如：可双语授课、熟悉多文化背景学生需求、擅长激发学习兴趣等 / e.g., Bilingual teaching, Familiarity with multicultural student needs, Expertise in motivating learners"></textarea>
+        </div>
+        <div class="form-group">
+            <label>学生群体 <span class="english">Target Students</span></label>
+            <input type="text" placeholder="如：儿童、成人、职场人、留学生等 / e.g., Children, Adults, Professionals, International students">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>联盟寄语 <span class="english">Message to LTA</span></h2>
+        <div class="form-group">
+            <textarea placeholder="分享加入LTA的期待或对同行的一句话祝福 / Share your expectations for joining LTA or a greeting to fellow educators"></textarea>
+        </div>
+    </div>
+
+    <div class="btn-container">
+        <button id="downloadPdf" onclick="window.print()">
+            生成并下载PDF <span class="english">Generate & Download PDF</span>
+        </button>
+        <h1>PDF发送至：| PDF send to: <a href="mailto:sherwinlaoshi@outlook.com" class="english">sherwinlaoshi@outlook.com</a></h1>
+    </div>
+
+    <script>
+        // 照片上传预览功能
+        const photoInput = document.getElementById('photoInput');
+        const preview = document.getElementById('preview');
+        const uploadPlaceholder = document.getElementById('upload-placeholder');
+
+        photoInput.addEventListener('change', function(e) {
+            if (e.target.files.length > 0) {
+                const file = e.target.files[0];
+                const reader = new FileReader();
+                
+                reader.onload = function(event) {
+                    preview.src = event.target.result;
+                    preview.style.display = 'block';
+                    uploadPlaceholder.style.display = 'none';
+                }
+                
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // 打印PDF时的样式优化
+        window.addEventListener('beforeprint', function() {
+            // 打印前可添加额外样式调整
+        });
+    </script>
+</body>
+</html>

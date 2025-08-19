@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>语言教师联盟 (LTA) - Language Teacher Alliance</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 头部样式 */
+        header {
+            background-color: #0a4c7d;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        
+        .logo-icon {
+            width: 80px;
+            height: 80px;
+            font-size: 36px;
+            margin-right: 15px;
+        }
+        
+        .logo-text h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        
+        .logo-text p {
+            font-style: italic;
+            opacity: 0.9;
+        }
+        
+        /* 导航栏 */
+        nav {
+            background-color: #083b61;
+            padding: 12px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 18px;
+            margin: 0 5px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        nav a span {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-top: 3px;
+        }
+        
+        nav a:hover {
+            background-color: #0a4c7d;
+        }
+        
+        /* 英雄区域 */
+        .hero {
+            background: linear-gradient(rgba(10, 76, 125, 0.9), rgba(10, 76, 125, 0.8)), url('./images/banner.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .hero h2 + p {
+            font-size: 20px;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .cta-btn {
+            background-color: #f9a826;
+            color: #333;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        /* 内容区域 */
+        .content {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #083b61;
+        }
+        
+        .section-title h2 {
+            font-size: 28px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+            margin-bottom: 10px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #f9a826;
+        }
+        
+        .section-title p {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .intro-card {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        
+        .intro-card h3 {
+            color: #083b61;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        .intro-card p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        /* 特色区域 */
+        .features {
+            background-color: #f0f5f9;
+            padding: 60px 0;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .feature-box {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            color: #0a4c7d;
+            margin-bottom: 15px;
+        }
+        
+        .feature-box h3 {
+            color: #083b61;
+            margin-bottom: 5px;
+        }
+        
+        .feature-box h3 + p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .feature-box p {
+            line-height: 1.7;
+        }
+        
+        /* 加入我们区域 */
+        .join-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .join-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        .join-content p.english {
+            color: #666;
+            font-size: 16px;
+            margin-top: -25px;
+            margin-bottom: 40px;
+        }
+        
+        /* 页脚 */
+        footer {
+            background-color: #083b61;
+            color: white;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-links {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            margin: 0 10px;
+            text-decoration: none;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-links a span {
+            font-size: 12px;
+            margin-top: 3px;
+            opacity: 0.7;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            opacity: 0.7;
+            font-size: 14px;
+        }
+        
+        /* 通用翻译文本样式 */
+        .english {
+            color: #666;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部 -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="./images/logo.png" alt="Logo" class="logo-icon">
+                <div class="logo-text">
+                    <h1>语言教师联盟 (LTA)</h1>
+                    <p>Language Teacher Alliance</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- 英雄区域 -->
+    <section class="hero">
+        <div class="container">
+            <h2>全球语言教师的专属港湾</h2>
+            <p>A Global Exclusive Haven for Language Teachers</p>
+            <p>在这里，语言教师相聚交流、互助成长，共同为语言学习者搭建通往世界的桥梁</p>
+            <p>Where language teachers connect, support each other's growth, and together build bridges to the world for language learners</p>
+            <a href="./Join.html" class="cta-btn">立即加入 LTA | Join LTA</a>
+        </div>
+    </section>
+    
+    <!-- 介绍内容 -->
+    <section id="about" class="content">
+        <div class="container">
+            <div class="section-title">
+                <h2>关于 LTA</h2>
+                <p>About LTA</p>
+            </div>
+            
+            <div class="intro-grid">
+                <div class="intro-card">
+                    <h3>中文介绍</h3>
+                    <p>欢迎加入语言教师联盟（LTA）—— 这里是全球语言教师的专属港湾。</p>
+                    <p>作为一个私密的专业社群，LTA汇聚了来自世界各地的资深语言教师。无论你擅长英语、汉语、西班牙语还是小语种，都能在这里找到志同道合的伙伴：我们一起探讨教学技巧，分享课堂经验，破解教学难题；更能通过联盟的资源网络，互相推荐学生、共享教学机会。</p>
+                    <p>加入LTA，你不仅能收获同行的支持与启发，更能借助全球教师的力量，帮助学生实现从日常交流到学术深造的多元语言目标。在这里，每个教师的价值都被看见，每个教学的热爱都能绽放。</p>
+                    <p>期待与你并肩，让语言教学之路更宽广、更温暖。</p>
+                </div>
+                
+                <div class="intro-card">
+                    <h3>English Introduction</h3>
+                    <p>Welcome to the Language Teacher Alliance (LTA) —— an exclusive haven for language educators worldwide.</p>
+                    <p>As a private professional community, LTA brings together seasoned language teachers from across the globe. Whether you specialize in English, Mandarin, Spanish, or less common languages, you’ll find like-minded peers here: we discuss teaching techniques, share classroom experiences, and solve pedagogical challenges together. What’s more, through our network, you can refer students to each other and access shared teaching opportunities.</p>
+                    <p>Joining LTA means gaining support and inspiration from fellow educators, and leveraging a global community to help students achieve diverse language goals — from daily communication to academic advancement. Here, every teacher’s value is recognized, and every passion for teaching can thrive.</p>
+                    <p>We look forward to standing with you, making the journey of language teaching broader and warmer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 联盟特色 -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>联盟特色</h2>
+                <p>Alliance Features</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon">🤝</div>
+                    <h3>同行互助</h3>
+                    <p class="english">Peer Support</p>
+                    <p>与全球资深语言教师交流，分享教学经验，共同解决教学难题</p>
+                    <p class="english">Connect with experienced language teachers worldwide, share teaching experiences, and solve pedagogical challenges together</p>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">🎓</div>
+                    <h3>资源共享</h3>
+                    <p class="english">Resource Sharing</p>
+                    <p>共享教学材料、课程设计和学习资源，提升教学质量与效率</p>
+                    <p class="english">Share teaching materials, curriculum designs and learning resources to improve teaching quality and efficiency</p>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">👥</div>
+                    <h3>学生互荐</h3>
+                    <p class="english">Student Referrals</p>
+                    <p>建立教师间的学生推荐网络，实现资源优化配置与共赢</p>
+                    <p class="english">Establish a student referral network among teachers to achieve optimal resource allocation and win-win outcomes</p>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">🌍</div>
+                    <h3>全球视野</h3>
+                    <p class="english">Global Perspective</p>
+                    <p>汇聚世界各地的语言教学智慧，拓展国际教学视野与机会</p>
+                    <p class="english">Gather language teaching wisdom from around the world, expand international teaching horizons and opportunities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 加入我们 -->
+    <section id="join" class="content">
+        <div class="container">
+            <div class="section-title">
+                <h2>加入我们</h2>
+                <p>Join Us</p>
+            </div>
+            
+            <div class="join-content">
+                <p>无论你是经验丰富的资深教师，还是充满热情的新锐教育者，LTA都期待你的加入，与全球语言教师共同成长！</p>
+                <p class="english">Whether you are an experienced senior teacher or an enthusiastic new educator, LTA looks forward to your joining to grow together with language teachers worldwide!</p>
+                <a href="./Join.html" class="cta-btn">申请加入 | Apply to Join</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 页脚 -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-links">
+                <a href="#about">
+                    关于我们
+                    <span>About Us</span>
+                </a>
+                <a href="#features">
+                    联盟特色
+                    <span>Features</span>
+                </a>
+                <a href="#join">
+                    加入流程
+                    <span>Joining Process</span>
+                </a>
+                <a href="mailto:contact@lta-alliance.org">
+                    联系我们
+                    <span>Contact Us</span>
+                </a>
+            </div>
+            <p>© 2025 语言教师联盟 (LTA) - Language Teacher Alliance. 保留所有权利。</p>
+            <p>All rights reserved.</p>
+            <p class="copyright">Designed for language educators worldwide</p>
+        </div>
+    </footer>
+
+    <script>
+    // 平滑滚动效果
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault(); // 阻止默认跳转行为
+
+            // 获取 href 中的锚点名称，比如 "#section1" -> "section1"
+            const targetId = this.getAttribute('href').substring(1);
+
+            // 找到对应 id 的目标元素
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                // 如果找到了目标元素，平滑滚动到它
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            } else {
+                console.warn(`未找到 ID 为 "${targetId}" 的目标元素`);
+            }
+        });
+    });
+</script>
