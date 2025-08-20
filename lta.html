@@ -418,10 +418,19 @@
             <div class="join-content">
                 <p>无论你是经验丰富的资深教师，还是充满热情的新锐教育者，LTA都期待你的加入，与全球语言教师共同成长！</p>
                 <p class="english">Whether you are an experienced senior teacher or an enthusiastic new educator, LTA looks forward to your joining to grow together with language teachers worldwide!</p>
-                <a href="./Join.html" class="cta-btn">申请加入 | Apply to Join</a>
+                
+                <!-- 推荐写法：不依赖 href 跳转，用 onclick 控制逻辑 -->
+                <a href="javascript:void(0)" class="cta-btn" onclick="handleJoinClick()">申请加入 | Apply to Join</a>
             </div>
         </div>
     </section>
+
+    <script>
+        function handleJoinClick() {
+            alert("请在浏览器中打开\nPlease open it in the browser");
+            window.location.href = "./Join.html"; // 用户确认后跳转
+        }
+    </script>
     
     <!-- 页脚 -->
     <footer id="contact">
