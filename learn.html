@@ -1300,7 +1300,7 @@
             <span class="btn-text">设置</span>
         </button>
         
-        <input type="file" class="hidden-input" id="videoInput" accept="video/*">
+        <input type="file" class="hidden-input" id="videoInput" accept="video/*,.mkv,.webm,.avi,.mov,.wmv,.flv,.m4v,.3gp,.ogv,.av1,.av01,.hevc,.h265,.h264,.264,.mp4">
         <input type="file" class="hidden-input" id="subtitleInput" accept=".srt,.vtt">
     </header>
 
@@ -2234,12 +2234,25 @@
             // 监听视频加载错误
             elements.videoPlayer.onerror = (e) => {
                 console.error('视频加载错误:', e);
-                showToast('视频加载失败，请尝试其他格式', 'error');
+                const unsupportedMsg = file.type.includes('hevc') || file.type.includes('h265') || file.name.endsWith('.hevc') || file.name.endsWith('.h265') || file.name.endsWith('.av1')
+                    ? '该格式（HEVC/AV1）可能在当前浏览器不支持，建议转换为 H.264/MP4'
+                    : '视频格式或编码不支持，请尝试转换格式';
+                showToast(unsupportedMsg, 'error');
             };
             
             // 监听视频加载成功
             elements.videoPlayer.onloadedmetadata = () => {
                 console.log('视频元数据加载成功:', elements.videoPlayer.videoWidth, 'x', elements.videoPlayer.videoHeight);
+                // 检测 HDR 视频
+                const isHDR = elements.videoPlayer.videoWidth >= 3840 || elements.videoPlayer.videoHeight >= 2160;
+                if (isHDR) {
+                    console.log('检测到 HDR/4K 视频');
+                }
+            };
+            
+            // 监听视频可播放状态
+            elements.videoPlayer.oncanplay = () => {
+                console.log('视频可以开始播放');
             };
             
             showToast('视频加载成功');
