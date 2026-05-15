@@ -332,6 +332,62 @@
             font-weight: 500;
         }
 
+        /* 萌典 Heteronyms 详细样式 */
+        .heteronym-details {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--surface-light);
+        }
+
+        .heteronym-header {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 12px 0 8px 0;
+        }
+
+        .heteronym-pinyin {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .heteronym-zhuyin {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .heteronym-def {
+            margin-bottom: 12px;
+            padding-left: 12px;
+            border-left: 2px solid var(--surface-light);
+        }
+
+        .heteronym-type {
+            display: inline-block;
+            padding: 2px 6px;
+            background: var(--secondary);
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 500;
+            margin-right: 6px;
+            color: var(--text-primary);
+        }
+
+        .heteronym-quotes {
+            margin-top: 6px;
+            padding-left: 8px;
+        }
+
+        .heteronym-quote {
+            font-size: 12px;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 4px;
+            line-height: 1.5;
+        }
+
         /* Player Section */
         .player-section {
             flex: 1;
@@ -1090,6 +1146,44 @@
             border-bottom: none;
         }
 
+        .settings-section {
+            background: var(--background);
+            border-radius: var(--radius);
+            padding: 16px;
+            margin: 12px 0;
+        }
+
+        .settings-section-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--surface-light);
+        }
+
+        .settings-item input[type="password"],
+        .settings-item input[type="text"] {
+            background: var(--surface-light);
+            border: 1px solid var(--surface-light);
+            border-radius: var(--radius);
+            color: var(--text-primary);
+            padding: 8px 12px;
+            font-size: 14px;
+            width: 100%;
+        }
+
+        .settings-item input[type="password"]:focus,
+        .settings-item input[type="text"]:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .settings-item input[type="password"]::placeholder,
+        .settings-item input[type="text"]::placeholder {
+            color: var(--text-secondary);
+        }
+
         .settings-label {
             font-size: 14px;
             color: var(--text-primary);
@@ -1320,6 +1414,47 @@
                     <option value="2">2.0x</option>
                 </select>
             </div>
+
+            <!-- 翻译API设置 -->
+            <div class="settings-section">
+                <div class="settings-section-title">翻译API设置</div>
+                
+                <div class="settings-item">
+                    <span class="settings-label">翻译API</span>
+                    <select id="translationApiSelect" class="subtitle-select" style="width: auto;">
+                        <option value="mymemory">MyMemory (免费)</option>
+                        <option value="caiyun">彩云小译</option>
+                        <option value="libretranslate">LibreTranslate</option>
+                        <option value="deepl">DeepL</option>
+                        <option value="google">Google Translate</option>
+                        <option value="moedict">萌典 Moedict</option>
+                    </select>
+                </div>
+
+                <div class="settings-item" style="flex-direction: column; align-items: stretch; gap: 8px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span class="settings-label">API Key</span>
+                        <button class="word-action-btn" id="toggleApiKeyBtn" style="padding: 4px 8px; font-size: 11px;">
+                            显示
+                        </button>
+                    </div>
+                    <input type="password" id="apiKeyInput" class="subtitle-select" style="width: 100%; padding: 8px 12px;" placeholder="输入API Key（部分API必需）">
+                    <small style="font-size: 11px; color: var(--text-secondary);" id="apiKeyHint">
+                        MyMemory无需API Key，直接可用
+                    </small>
+                </div>
+
+                <div class="settings-item">
+                    <span class="settings-label">API地址</span>
+                    <input type="text" id="customApiUrlInput" class="subtitle-select" style="width: auto; padding: 8px 12px;" placeholder="自定义API URL（如使用自建服务）">
+                </div>
+
+                <div class="settings-item">
+                    <button class="word-action-btn" id="testApiBtn" style="width: 100%; justify-content: center;">
+                        测试API连接
+                    </button>
+                </div>
+            </div>
             
             <div class="settings-item">
                 <span class="settings-label">键盘快捷键</span>
@@ -1503,7 +1638,10 @@
             showPinyin: false, // 是否显示拼音
             settings: {
                 fontSize: 16,
-                playbackSpeed: 1
+                playbackSpeed: 1,
+                translationApi: 'mymemory',
+                apiKey: '',
+                customApiUrl: ''
             },
             mobileMenuOpen: false,
             vocabPanelVisible: true
@@ -1565,6 +1703,12 @@
             settingsClose: document.getElementById('settingsClose'),
             fontSizeSlider: document.getElementById('fontSizeSlider'),
             playbackSpeedSelect: document.getElementById('playbackSpeedSelect'),
+            translationApiSelect: document.getElementById('translationApiSelect'),
+            apiKeyInput: document.getElementById('apiKeyInput'),
+            apiKeyHint: document.getElementById('apiKeyHint'),
+            toggleApiKeyBtn: document.getElementById('toggleApiKeyBtn'),
+            customApiUrlInput: document.getElementById('customApiUrlInput'),
+            testApiBtn: document.getElementById('testApiBtn'),
             // 切换面板按钮
             togglePanelBtn: document.getElementById('togglePanelBtn')
         };
@@ -1665,27 +1809,298 @@
         }
 
         // ============================================
-        // Dictionary Functions (Free Dictionary API)
+        // Dictionary Functions (Multiple API Support)
         // ============================================
+
+        // API配置
+        const API_CONFIG = {
+            mymemory: {
+                name: 'MyMemory',
+                hint: '免费无需API Key',
+                needKey: false,
+                endpoint: 'https://api.mymemory.translated.net/get'
+            },
+            caiyun: {
+                name: '彩云小译',
+                hint: '需要申请API Key',
+                needKey: true,
+                endpoint: 'https://api.interpreter.caiyunai.com/api/v1/translator'
+            },
+            libretranslate: {
+                name: 'LibreTranslate',
+                hint: '可使用公共实例或自建服务',
+                needKey: false,
+                endpoint: 'https://libretranslate.com/translate'
+            },
+            deepl: {
+                name: 'DeepL',
+                hint: '需要DeepL API Key',
+                needKey: true,
+                endpoint: 'https://api-free.deepl.com/v2/translate'
+            },
+            google: {
+                name: 'Google Translate',
+                hint: '需要Google Cloud API Key',
+                needKey: true,
+                endpoint: 'https://translation.googleapis.com/language/translate/v2'
+            },
+            moedict: {
+                name: '萌典 Moedict',
+                hint: '台湾线上中文字典，免费无需API Key',
+                needKey: false,
+                endpoint: 'https://www.moedict.tw/uni/'
+            }
+        };
+
+        // 中文翻译API
+        async function translateChinese(text) {
+            const api = state.settings.translationApi;
+            const apiKey = state.settings.apiKey;
+            const customUrl = state.settings.customApiUrl;
+
+            try {
+                switch (api) {
+                    case 'mymemory':
+                        return await translateWithMyMemory(text);
+                    case 'caiyun':
+                        return await translateWithCaiyun(text, apiKey);
+                    case 'libretranslate':
+                        return await translateWithLibreTranslate(text, apiKey, customUrl);
+                    case 'deepl':
+                        return await translateWithDeepL(text, apiKey);
+                    case 'google':
+                        return await translateWithGoogle(text, apiKey);
+                    case 'moedict':
+                        return await translateWithMoedict(text);
+                    default:
+                        return await translateWithMyMemory(text);
+                }
+            } catch (error) {
+                console.error('Translation error:', error);
+                return { translation: '翻译失败', definition: text };
+            }
+        }
+
+        async function translateWithMyMemory(text) {
+            const response = await fetch(
+                `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=zh-CN|en`
+            );
+            if (!response.ok) throw new Error('MyMemory API error');
+            const data = await response.json();
+            return {
+                translation: data.responseData?.translatedText || '无翻译',
+                definition: data.responseData?.translatedText || text
+            };
+        }
+
+        async function translateWithCaiyun(text, apiKey) {
+            if (!apiKey) {
+                return await translateWithMyMemory(text);
+            }
+            const response = await fetch('https://api.interpreter.caiyunai.com/api/v1/translator', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Authorization': `Bearer ${apiKey}`
+                },
+                body: JSON.stringify({
+                    source: 'auto',
+                    target: 'en',
+                    raw_source_language_type: 'ZH',
+                    translated_text: text
+                })
+            });
+            if (!response.ok) throw new Error('Caiyun API error');
+            const data = await response.json();
+            return {
+                translation: data.target || data.response?.targets?.[0] || '无翻译',
+                definition: data.target || text
+            };
+        }
+
+        async function translateWithLibreTranslate(text, apiKey, customUrl) {
+            const endpoint = customUrl || API_CONFIG.libretranslate.endpoint;
+            const headers = {
+                'Content-Type': 'application/json'
+            };
+            if (apiKey) {
+                headers['Authorization'] = `Bearer ${apiKey}`;
+            }
+            const response = await fetch(endpoint, {
+                method: 'POST',
+                headers: headers,
+                body: JSON.stringify({
+                    q: text,
+                    source: 'zh',
+                    target: 'en',
+                    format: 'text'
+                })
+            });
+            if (!response.ok) throw new Error('LibreTranslate API error');
+            const data = await response.json();
+            return {
+                translation: data.translatedText || '无翻译',
+                definition: data.translatedText || text
+            };
+        }
+
+        async function translateWithDeepL(text, apiKey) {
+            if (!apiKey) {
+                return await translateWithMyMemory(text);
+            }
+            const response = await fetch('https://api-free.deepl.com/v2/translate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Authorization': `DeepL-Auth-Key ${apiKey}`
+                },
+                body: `text=${encodeURIComponent(text)}&source_lang=ZH&target_lang=EN`
+            });
+            if (!response.ok) throw new Error('DeepL API error');
+            const data = await response.json();
+            return {
+                translation: data.translations?.[0]?.text || '无翻译',
+                definition: data.translations?.[0]?.text || text
+            };
+        }
+
+        async function translateWithGoogle(text, apiKey) {
+            if (!apiKey) {
+                return await translateWithMyMemory(text);
+            }
+            const response = await fetch(
+                `https://translation.googleapis.com/language/translate/v2?key=${apiKey}`,
+                {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        q: text,
+                        source: 'zh-CN',
+                        target: 'en',
+                        format: 'text'
+                    })
+                }
+            );
+            if (!response.ok) throw new Error('Google API error');
+            const data = await response.json();
+            return {
+                translation: data.data?.translations?.[0]?.translatedText || '无翻译',
+                definition: data.data?.translations?.[0]?.translatedText || text
+            };
+        }
+
+        // 萌典 Moedict - 台湾线上中文字典
+        async function translateWithMoedict(text) {
+            console.log('Moedict: 查询词', text);
+            
+            try {
+                const response = await fetch(
+                    `https://www.moedict.tw/uni/${encodeURIComponent(text)}`
+                );
+                console.log('Moedict: 响应状态', response.status);
+                
+                if (!response.ok) throw new Error('Moedict API error: ' + response.status);
+                const data = await response.json();
+                console.log('Moedict: 原始数据', JSON.stringify(data).substring(0, 500));
+
+                // 解析萌典返回的数据
+                const result = {
+                    radical: data.radical || '',
+                    stroke_count: data.stroke_count || '',
+                    heteronyms: []
+                };
+
+                // 解析 heteronyms 数组 - 萌典返回的是 heteronyms 字段
+                const heteronyms = data.heteronyms || data.h || [];
+                console.log('Moedict: heteronyms 数据', Array.isArray(heteronyms) ? heteronyms.length : 'not array');
+                
+                const heteronymList = Array.isArray(heteronyms) ? heteronyms : [heteronyms];
+
+                heteronymList.forEach(h => {
+                    const item = {
+                        pinyin: h.bopomofo2 || h.bopomofo || '',
+                        pinyinZhuyin: h.bopomofo || '',
+                        definitions: []
+                    };
+
+                    // 解析 definitions 数组
+                    const defs = h.definitions || h.d || [];
+                    const defList = Array.isArray(defs) ? defs : [defs];
+
+                    defList.forEach(d => {
+                        if (typeof d === 'string') {
+                            item.definitions.push({
+                                type: '',
+                                def: d,
+                                quote: []
+                            });
+                        } else if (d.def) {
+                            item.definitions.push({
+                                type: d.type || '',
+                                def: d.def,
+                                quote: d.quote || []
+                            });
+                        }
+                    });
+
+                    result.heteronyms.push(item);
+                });
+
+                console.log('Moedict: 解析后结果', JSON.stringify(result).substring(0, 500));
+
+                // 构建兼容的 translation 和 definition（用于词汇列表显示）
+                const firstDef = result.heteronyms[0]?.definitions[0];
+                result.translation = firstDef?.def || '无释义';
+                result.definition = firstDef?.def || '无释义';
+                result.phonetic = result.heteronyms[0]?.pinyin || '';
+                result.partOfSpeech = firstDef?.type || '';
+                result.sentence = firstDef?.quote?.[0] || '';
+
+                return result;
+            } catch (error) {
+                console.error('Moedict 错误:', error);
+                // 如果萌典失败，尝试使用 MyMemory 作为后备
+                console.log('Moedict: 使用 MyMemory 后备');
+                return await translateWithMyMemory(text);
+            }
+        }
+
         async function lookupWord(word) {
             const isChinese = /[\u4e00-\u9fa5]/.test(word);
             
             try {
                 if (isChinese) {
-                    // 中文词典 - 使用 MyMemory 翻译 API
-                    const response = await fetch(
-                        `https://api.mymemory.translated.net/get?q=${encodeURIComponent(word)}&langpair=zh-CN|en`
-                    );
-                    if (!response.ok) {
-                        return { type: 'chinese', word, translation: '翻译失败', definition: word };
+                    // 中文 - 使用配置的翻译API
+                    const api = state.settings.translationApi;
+                    console.log('lookupWord: 当前 API', api, '查询词', word);
+                    
+                    if (api === 'moedict') {
+                        // 萌典返回完整结构
+                        const result = await translateWithMoedict(word);
+                        console.log('lookupWord: 萌典返回结果', JSON.stringify(result).substring(0, 300));
+                        return {
+                            type: 'chinese',
+                            word: word,
+                            radical: result.radical,
+                            stroke_count: result.stroke_count,
+                            heteronyms: result.heteronyms,
+                            translation: result.translation,
+                            definition: result.definition,
+                            phonetic: result.phonetic,
+                            partOfSpeech: result.partOfSpeech,
+                            sentence: result.sentence
+                        };
+                    } else {
+                        // 其他翻译API
+                        console.log('lookupWord: 使用其他 API', api);
+                        const result = await translateChinese(word);
+                        return {
+                            type: 'chinese',
+                            word: word,
+                            translation: result.translation,
+                            definition: result.definition
+                        };
                     }
-                    const data = await response.json();
-                    return {
-                        type: 'chinese',
-                        word: word,
-                        translation: data.responseData?.translatedText || '无翻译',
-                        definition: data.responseData?.translatedText || word
-                    };
                 } else {
                     // 英文词典 - 使用 Free Dictionary API
                     const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`);
@@ -1698,6 +2113,52 @@
             } catch (error) {
                 console.error('Dictionary lookup failed:', error);
                 return null;
+            }
+        }
+
+        // 测试API连接
+        async function testApiConnection() {
+            const api = state.settings.translationApi;
+            const apiKey = state.settings.apiKey;
+            
+            try {
+                switch (api) {
+                    case 'mymemory':
+                        await translateWithMyMemory('测试');
+                        showToast('MyMemory API 连接成功');
+                        break;
+                    case 'caiyun':
+                        if (!apiKey) {
+                            showToast('请先输入彩云小译 API Key', 'error');
+                            return;
+                        }
+                        await translateWithCaiyun('test', apiKey);
+                        showToast('彩云小译 API 连接成功');
+                        break;
+                    case 'libretranslate':
+                        await translateWithLibreTranslate('test', apiKey, state.settings.customApiUrl);
+                        showToast('LibreTranslate API 连接成功');
+                        break;
+                    case 'deepl':
+                        if (!apiKey) {
+                            showToast('请先输入 DeepL API Key', 'error');
+                            return;
+                        }
+                        await translateWithDeepL('测试', apiKey);
+                        showToast('DeepL API 连接成功');
+                        break;
+                    case 'google':
+                        if (!apiKey) {
+                            showToast('请先输入 Google API Key', 'error');
+                            return;
+                        }
+                        await translateWithGoogle('测试', apiKey);
+                        showToast('Google Translate API 连接成功');
+                        break;
+                }
+            } catch (error) {
+                console.error('API test failed:', error);
+                showToast('API 连接失败，请检查配置', 'error');
             }
         }
 
@@ -1714,15 +2175,26 @@
             }
 
             if (apiData.type === 'chinese') {
-                // 中文词条信息
-                return {
+                // 中文词条信息 - 保留萌典完整数据
+                const result = {
                     word: apiData.word,
-                    phonetic: '',
-                    partOfSpeech: '中文',
-                    definition: apiData.definition,
-                    translation: apiData.translation,
+                    phonetic: apiData.phonetic || '',
+                    partOfSpeech: apiData.partOfSpeech || '中文',
+                    definition: apiData.definition || '',
+                    translation: apiData.translation || '',
                     sentence: sentence
                 };
+                // 保留萌典 heteronyms 数据
+                if (apiData.heteronyms) {
+                    result.heteronyms = apiData.heteronyms;
+                }
+                if (apiData.radical) {
+                    result.radical = apiData.radical;
+                }
+                if (apiData.stroke_count) {
+                    result.stroke_count = apiData.stroke_count;
+                }
+                return result;
             }
 
             // Get phonetic
@@ -1747,10 +2219,29 @@
         // Video Player Functions
         // ============================================
         function openVideo(file) {
+            console.log('openVideo: 文件名', file.name, '大小', file.size, '类型', file.type);
+            
+            // 清理之前的 Blob URL
+            if (elements.videoPlayer.src && elements.videoPlayer.src.startsWith('blob:')) {
+                URL.revokeObjectURL(elements.videoPlayer.src);
+            }
+            
             const url = URL.createObjectURL(file);
             elements.videoPlayer.src = url;
             elements.videoPlaceholder.style.display = 'none';
             state.video = file;
+            
+            // 监听视频加载错误
+            elements.videoPlayer.onerror = (e) => {
+                console.error('视频加载错误:', e);
+                showToast('视频加载失败，请尝试其他格式', 'error');
+            };
+            
+            // 监听视频加载成功
+            elements.videoPlayer.onloadedmetadata = () => {
+                console.log('视频元数据加载成功:', elements.videoPlayer.videoWidth, 'x', elements.videoPlayer.videoHeight);
+            };
+            
             showToast('视频加载成功');
         }
 
@@ -2134,18 +2625,67 @@
         // Word Details Functions
         // ============================================
         function displayWordDetails(wordInfo) {
+            console.log('displayWordDetails: 接收数据', JSON.stringify(wordInfo).substring(0, 500));
+            
             elements.wordEmptyState.style.display = 'none';
             elements.wordDetails.style.display = 'block';
             
             elements.detailWord.textContent = wordInfo.word;
-            elements.detailPhonetic.textContent = wordInfo.phonetic;
+            elements.detailPhonetic.textContent = wordInfo.phonetic || '';
             elements.detailPos.textContent = wordInfo.partOfSpeech || '未知';
-            elements.detailDefinition.textContent = wordInfo.definition;
-            elements.detailTranslation.textContent = wordInfo.translation;
-            elements.detailSentence.textContent = wordInfo.sentence;
+            elements.detailDefinition.textContent = wordInfo.definition || '';
+            elements.detailTranslation.textContent = wordInfo.translation || '';
+            elements.detailSentence.textContent = wordInfo.sentence || '';
             
             // Highlight current word in vocabulary list
             updateVocabularyHighlight(wordInfo.word);
+            
+            // 萌典 heteronyms 详细展示 - 在 definition 区域追加显示
+            console.log('displayWordDetails: heteronyms', wordInfo.heteronyms?.length, wordInfo.heteronyms);
+            if (wordInfo.heteronyms && wordInfo.heteronyms.length > 0) {
+                let detailedHtml = '';
+                
+                wordInfo.heteronyms.forEach((h, idx) => {
+                    if (wordInfo.heteronyms.length > 1) {
+                        detailedHtml += `<div class="heteronym-header">发音 ${idx + 1}</div>`;
+                    }
+                    
+                    // 拼音（如果有注音符号也显示）
+                    if (h.pinyin) {
+                        detailedHtml += `<div class="heteronym-pinyin">拼音: ${h.pinyin}</div>`;
+                    }
+                    if (h.pinyinZhuyin && h.pinyinZhuyin !== h.pinyin) {
+                        detailedHtml += `<div class="heteronym-zhuyin">注音: ${h.pinyinZhuyin}</div>`;
+                    }
+                    
+                    // 释义列表
+                    if (h.definitions && h.definitions.length > 0) {
+                        h.definitions.forEach((def, defIdx) => {
+                            const typeLabel = def.type ? `<span class="heteronym-type">${def.type}</span>` : '';
+                            const quoteList = def.quote && def.quote.length > 0 
+                                ? `<div class="heteronym-quotes">${def.quote.map(q => `<div class="heteronym-quote">「${q}」</div>`).join('')}</div>` 
+                                : '';
+                            
+                            detailedHtml += `
+                                <div class="heteronym-def">
+                                    <div>${typeLabel}${defIdx + 1}. ${def.def}</div>
+                                    ${quoteList}
+                                </div>
+                            `;
+                        });
+                    }
+                });
+                
+                // 追加到释义区域
+                elements.detailDefinition.innerHTML = wordInfo.definition || '';
+                elements.detailDefinition.innerHTML += `<div class="heteronym-details">${detailedHtml}</div>`;
+                
+                // 更新词性显示
+                if (wordInfo.heteronyms[0]?.definitions[0]?.type) {
+                    const types = [...new Set(wordInfo.heteronyms.flatMap(h => h.definitions?.map(d => d.type) || []).filter(Boolean))];
+                    elements.detailPos.textContent = types.join('、');
+                }
+            }
         }
 
         function updateVocabularyHighlight(word) {
@@ -2246,7 +2786,9 @@
             elements.importSubtitleBtn.addEventListener('click', () => elements.subtitleInput.click());
             
             elements.videoInput.addEventListener('change', (e) => {
-                if (e.target.files[0]) {
+                console.log('videoInput change 事件触发, 文件数:', e.target.files?.length || 0);
+                if (e.target.files && e.target.files[0]) {
+                    console.log('选择的文件:', e.target.files[0].name, e.target.files[0].size);
                     openVideo(e.target.files[0]);
                 }
             });
@@ -2421,10 +2963,23 @@
             elements.playbackSpeedSelect.value = state.settings.playbackSpeed;
             elements.videoPlayer.playbackRate = state.settings.playbackSpeed;
             
+            // 应用翻译API设置
+            elements.translationApiSelect.value = state.settings.translationApi;
+            elements.apiKeyInput.value = state.settings.apiKey;
+            elements.customApiUrlInput.value = state.settings.customApiUrl;
+            updateApiKeyHint(state.settings.translationApi);
+            
             // 应用当前字幕行字体大小
             document.querySelectorAll('.subtitle-row.current').forEach(el => {
                 el.style.fontSize = state.settings.fontSize + 'px';
             });
+        }
+
+        function updateApiKeyHint(api) {
+            const config = API_CONFIG[api];
+            if (config) {
+                elements.apiKeyHint.textContent = config.hint;
+            }
         }
 
         // ============================================
@@ -2460,10 +3015,15 @@
 
             // 移动端视频按钮
             elements.mobileOpenVideoBtn.addEventListener('click', () => {
+                console.log('移动端视频按钮点击');
                 closeMobileMenu();
-                elements.videoInput.click();
+                // 延迟一下确保菜单关闭
+                setTimeout(() => {
+                    console.log('触发视频文件选择');
+                    elements.videoInput.click();
+                }, 100);
             });
-
+            
             // 移动端字幕按钮
             elements.mobileImportSubtitleBtn.addEventListener('click', () => {
                 closeMobileMenu();
@@ -2552,6 +3112,38 @@
                 elements.videoPlayer.playbackRate = state.settings.playbackSpeed;
                 saveSettings();
                 showToast(`播放速度: ${state.settings.playbackSpeed}x`);
+            });
+
+            // 翻译API选择
+            elements.translationApiSelect.addEventListener('change', (e) => {
+                state.settings.translationApi = e.target.value;
+                updateApiKeyHint(e.target.value);
+                saveSettings();
+                showToast(`翻译API: ${API_CONFIG[e.target.value]?.name || e.target.value}`);
+            });
+
+            // API Key输入
+            elements.apiKeyInput.addEventListener('input', (e) => {
+                state.settings.apiKey = e.target.value;
+                saveSettings();
+            });
+
+            // 自定义API URL输入
+            elements.customApiUrlInput.addEventListener('input', (e) => {
+                state.settings.customApiUrl = e.target.value;
+                saveSettings();
+            });
+
+            // 显示/隐藏API Key
+            elements.toggleApiKeyBtn.addEventListener('click', () => {
+                const isPassword = elements.apiKeyInput.type === 'password';
+                elements.apiKeyInput.type = isPassword ? 'text' : 'password';
+                elements.toggleApiKeyBtn.textContent = isPassword ? '隐藏' : '显示';
+            });
+
+            // 测试API连接
+            elements.testApiBtn.addEventListener('click', () => {
+                testApiConnection();
             });
         }
 
